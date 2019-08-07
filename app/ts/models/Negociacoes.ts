@@ -1,4 +1,5 @@
 import { Negociacao } from "./Negociacao";
+import { logarTempoDeExecucao } from "../helpers/decorators/index";
 
 export class Negociacoes {
 
@@ -10,7 +11,8 @@ export class Negociacoes {
 
     }
 
+    @logarTempoDeExecucao()
     paraArray(): Negociacao[] {
-        return [].concat(this._negociacoes);
+        return ([] as Negociacao[]).concat(this._negociacoes);
     }
 }
